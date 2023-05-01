@@ -1,28 +1,45 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import Buy from "../Buy"
+import Buy from "../Buy";
 
 export default function Card(props) {
   const [tog, setTog] = useState(false);
   const toggle = () => {
     setTog(!tog);
   };
-  function addCart() {
+
+  const addCart = () => {
     props.setCartData((p) => {
       console.log(p);
       return {
         ...p,
         [props.id]: {
-          'image': props.image,
-          'title': props.title,
-          'description': props.description,
-          'price': props.price,
-          'rate': props.rate,
-          'count': props.count,
+          image: props.image,
+          title: props.title,
+          description: props.description,
+          price: props.price,
+          rate: props.rate,
+          count: props.count,
         },
       };
     });
-  }
+  };
+  // function addCart(props) {
+  //   props.setCartData((cartData) => {
+  //     console.log(cartData);
+  //     return {
+  //       ...cartData,
+  //       [props.id]: {
+  //         'image': props.image,
+  //         'title': props.title,
+  //         'description': props.description,
+  //         'price': props.price,
+  //         'rate': props.rate,
+  //         'count': props.count,
+  //       },
+  //     };
+  //   });
+  // }
   return (
     <div class="max-w-sm bg-white rounded-lg shadow grid content-between p-5">
       <div>

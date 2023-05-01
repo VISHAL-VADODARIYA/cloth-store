@@ -14,7 +14,7 @@ export default function Api({ cartData, setCartData }) {
       .catch((error) => console.log(error));
   };
   GetPostsData();
-
+  console.log("mean", cartData);
   return (
     <div>
       {data ? (

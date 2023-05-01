@@ -11,24 +11,32 @@ import Navbar from "./components/UI/Navbar";
 
 function App() {
   //data of add cart store in cartData...
+  // const [cartData, setCartData] = useState({});
+
   const [cartData, setCartData] = useState([]);
-
   const [login, setLogin] = useState({ isLogin: false, username: "" });
-
+  const [cartToggle, setCartToggle] = useState(false);
+  // console.log(cartToggle);
   return (
     <>
       <Router>
-        <Navbar login={login} />
+        <Navbar
+          login={login}
+          setCartData={setCartData}
+          setCartToggle={setCartToggle}
+          cartData={cartData}
+        />
         <Routes>
-          {/* {login.isLogin ? ( */}
+          {login.isLogin ? (
           <Route exact path="/" element={<Home />}></Route>
-          {/* ) : (
+           ) : (
             <Route
               exact
               path="/"
               element={<Login setLogin={setLogin} />}
             ></Route>
-          )} */}
+          )}
+
           <Route
             exact
             path="/login"

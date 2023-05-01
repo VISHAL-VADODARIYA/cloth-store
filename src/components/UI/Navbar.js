@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
 
-export default function Navbar({ login }) {
+export default function Navbar({ login, setCartToggle, cartData, setCartData }) {
   const [buy, setBuy] = useState(false);
+
   function Buy() {
     setBuy(true);
+    setCartToggle(true);
   }
 
   return (
@@ -90,7 +92,18 @@ export default function Navbar({ login }) {
           </div>
         </div>
       </nav>
-      {buy && <Cart setBuy={setBuy} />}
+      {/* {login.isLogin ?  */}
+        { buy && (
+          <Cart
+            cartData={cartData}
+            setCartData={setCartData}
+            setBuy={setBuy}
+            cartToggle={buy}
+            setCartToggle={() => {
+              setBuy(false);
+            }}
+          />
+        )}
     </>
   );
 }
