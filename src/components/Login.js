@@ -28,6 +28,7 @@ export default function Login({ setLogin ,login }) {
     }
     
   };
+  const checkpass =() => { password != loginData.password && <div>Please enter correct password!</div>}
   
   // const logout = () =>{setLogin({ isLogin: false, username: "login" });}
   return (
@@ -71,11 +72,17 @@ export default function Login({ setLogin ,login }) {
                   required
                 />
               </div>
+              <div className="text-red-700">
+                {checkpass}
+              </div>
+              <div>
+                Your password is: {loginData.password}
+              </div>
 
               <button
                 type="submit"
                 class="w-full text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-                // onClick={logout}
+                onClick={checkpass}
               >
                 Login to your account
               </button>
