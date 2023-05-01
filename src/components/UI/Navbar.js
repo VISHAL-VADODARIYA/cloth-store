@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Cart from "./Cart";
+import Cart from "../Cart";
 
 export default function Navbar({ login }) {
   const [buy, setBuy] = useState(false);

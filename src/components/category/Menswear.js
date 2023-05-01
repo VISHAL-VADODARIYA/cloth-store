@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
-import Card from "./Card";
+import Card from "../UI/Card";
 
 export default function Api({ cartData, setCartData }) {
   const [data, setData] = useState();
@@ -18,7 +18,7 @@ export default function Api({ cartData, setCartData }) {
   return (
     <div>
       {data ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mx-48 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:mx-36 mx-auto mt-10">
           {data.data.map((i) => {
             return (
               <Card

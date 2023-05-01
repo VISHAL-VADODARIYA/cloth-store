@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import Buy from "../Buy"
 
 export default function Card(props) {
   const [tog, setTog] = useState(false);
@@ -12,12 +13,12 @@ export default function Card(props) {
       return {
         ...p,
         [props.id]: {
-          [props.image]: props.image,
-          [props.title]: props.title,
-          [props.description]: props.description,
-          [props.price]: props.price,
-          [props.rate]: props.rate,
-          [props.count]: props.count,
+          'image': props.image,
+          'title': props.title,
+          'description': props.description,
+          'price': props.price,
+          'rate': props.rate,
+          'count': props.count,
         },
       };
     });
@@ -28,14 +29,14 @@ export default function Card(props) {
         <div className="flex justify-center p-3">
           <a href="#">
             <img
-              class="rounded-t-lg  object-contain overflow-hidden border border-1 w-48 h-48 bg-white"
+              class="rounded-t-lg  object-contain overflow-hidden border border-0 w-32 h-32 bg-white"
               src={props.image}
               alt={props.image + "Image"}
             />
           </a>
         </div>
 
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
           {props.title}
         </h5>
         <p class="mb-3 font-normal text-white">
@@ -46,27 +47,28 @@ export default function Card(props) {
           {tog && (
             <div
               className={
-                "border border-1 rounded  transition ease-in-out delay-1000  shadow-md shadow-gray-700 text-gray-700 p-3"
+                "border border-1 rounded shadow-md shadow-gray-700 text-gray-700 p-3"
               }
             >
               {props.description}
+              <p class="mt-3 mb-1 underline font-normal text-gray-700">
+                Rating : {props.rate}★ <br />
+                Rating by {props.count} People
+              </p>
             </div>
           )}
         </p>
         <h5 class="mb-3 font-bold text-gray-700">Price : {props.price} ₹</h5>
-        <p class="mb-3 font-normal text-gray-700">
-          Rating : {props.rate}★ <br />
-          Rating by {props.count} People
-        </p>
       </div>
       <div className="flex justify-around mt-full">
         <Button
           class="bg-green-700 text-white hover:bg-green-800"
           text="Buy"
           id={props.id}
+          onClick={Buy}
         />
         <Button
-          class="bg-blue-700 text-white hover:bg-blue-800"
+          class="bg-blue-700 px-2 text-white hover:bg-blue-800"
           text="Add To Cart"
           id={props.id}
           onClick={addCart}

@@ -2,16 +2,16 @@ import "./App.css";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Login from "./components/Login";
-import Menswear from "./components/Menswear";
-import Womenswear from "./components/Womenswear";
-import Jewelery from "./components/Jewelery";
-import Electronics from "./components/Electronics";
+import Menswear from "./components/category/Menswear";
+import Womenswear from "./components/category/Womenswear";
+import Jewelery from "./components/category/Jewelery";
+import Electronics from "./components/category/Electronics";
 import { useState } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/UI/Navbar";
 
 function App() {
   //data of add cart store in cartData...
-  const [cartData, setCartData] = useState({});
+  const [cartData, setCartData] = useState([]);
 
   const [login, setLogin] = useState({ isLogin: false, username: "" });
 
