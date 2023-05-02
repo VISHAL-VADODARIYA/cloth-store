@@ -88,7 +88,6 @@ export default function Cart({
   //     );
   //   });
   // };
-  console.log(cartData, "check your data");
   return cartToggle ? (
     <Fragment>
       {ReactDOM.createPortal(
@@ -126,7 +125,7 @@ export default function Cart({
                               src={cartData[i].image}
                             />
                           </div>
-                          <div class="bg-white mb-3 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+                          <div class="bg-white mb-3 pl-3 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                             <div class="text-black font-bold text-xl mb-1 leading-tight">
                               {cartData[i].title}
                             </div>
@@ -135,7 +134,9 @@ export default function Cart({
                             </p>
                             <p class="text-grey-darker text-base">
                               Total Price:{" "}
-                              {(cartData[i].price * countItem[i]).toFixed(2)}
+                              {(
+                                cartData[i].price * (countItem[i] || 1)
+                              ).toFixed(2)}
                             </p>
                             <div className="flex justify-start">
                               <div className="flex border border-1 rounded border-pink-700 w-min">
@@ -206,6 +207,7 @@ export default function Cart({
                     text="Cancel"
                     onClick={() => {
                       setCartData([]);
+                      setCartToggle(false);
                     }}
                   />
                   <Button class="bg-pink-700 text-white px-9" text="Buy" />

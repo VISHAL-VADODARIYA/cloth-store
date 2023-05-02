@@ -4,6 +4,9 @@ import Home from "./Home";
 export default function Login({ setLogin ,login }) {
   var password;
   var passcode;
+  const [PassCheck,setPassCheck] = useState('')
+
+
   const [loginData, setLoginData] = useState({
     name: "",
     password: Math.floor(Math.random() * 9999 + 1),
@@ -28,7 +31,7 @@ export default function Login({ setLogin ,login }) {
     }
     
   };
-  const checkpass =() => { password != loginData.password && <div>Please enter correct password!</div>}
+  const checkpass =() => { setPassCheck('Plase enter correct password')}
   
   // const logout = () =>{setLogin({ isLogin: false, username: "login" });}
   return (
@@ -72,12 +75,8 @@ export default function Login({ setLogin ,login }) {
                   required
                 />
               </div>
-              <div className="text-red-700">
-                {checkpass}
-              </div>
-              <div>
-                Your password is: {loginData.password}
-              </div>
+              <div className="text-red-700">{PassCheck}</div>
+              <div>Your password is: {loginData.password}</div>
 
               <button
                 type="submit"

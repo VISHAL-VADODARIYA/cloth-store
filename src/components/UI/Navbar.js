@@ -2,14 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
 
-export default function Navbar({ login, setCartToggle, cartData, setCartData }) {
+export default function Navbar({
+  login,
+  setLogin,
+  setCartToggle,
+  cartData,
+  setCartData,
+}) {
   const [buy, setBuy] = useState(false);
 
   function Buy() {
-    setBuy(true);
+    login.isLogin && setBuy(true);
     setCartToggle(true);
   }
 
+  function logout() {
+    setLogin({ isLogin: false, username: "" });
+  }
   // const [toggleClose,setToggleClose] = useState(false)
   // function toggleclose(){
   //   setToggleClose(!toggleClose);
@@ -75,7 +84,7 @@ export default function Navbar({ login, setCartToggle, cartData, setCartData }) 
   return (
     <>
       <nav class="bg-pink-700 shadow-xl border-gray-200">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" class="flex items-center">
             <span class="text-white self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
               Fake Store
@@ -88,7 +97,6 @@ export default function Navbar({ login, setCartToggle, cartData, setCartData }) 
             aria-controls="navbar-default"
             aria-expanded="false"
             // onChange={toggleclose}
-            
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -105,7 +113,6 @@ export default function Navbar({ login, setCartToggle, cartData, setCartData }) 
               ></path>
             </svg>
           </button>
-
 
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0">
@@ -171,12 +178,27 @@ export default function Navbar({ login, setCartToggle, cartData, setCartData }) 
             </Link>
             <div className="m-2"> </div>
 
-            <button
-              className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
-              onClick={Buy}
-            >
-              Cart
-            </button>
+            {login.isLogin && (
+              <button
+                className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                onClick={Buy}
+              >
+                Cart{" "}
+                {login.isLogin && (
+                  <span className="border px-1 rounded-full border-0 bg-pink-700 text-white">
+                    {Object.keys(cartData).length}
+                  </span>
+                )}
+              </button>
+            )}
+            <div className="m-2"> </div>
+
+            {login.isLogin && (
+              <button
+                className="px-3 py-1 bg-white rounded  text-pink-700 hover:bg-pink-200 fa fa-sign-out"
+                onClick={logout}
+              ></button>
+            )}
           </div>
         </div>
       </nav>
@@ -195,5 +217,3 @@ export default function Navbar({ login, setCartToggle, cartData, setCartData }) 
     </>
   );
 }
-
-

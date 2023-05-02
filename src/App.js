@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link,Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Menswear from "./components/category/Menswear";
 import Womenswear from "./components/category/Womenswear";
@@ -25,11 +25,12 @@ function App() {
           setCartData={setCartData}
           setCartToggle={setCartToggle}
           cartData={cartData}
+          setLogin={setLogin}
         />
         <Routes>
           {login.isLogin ? (
-          <Route exact path="/" element={<Home />}></Route>
-           ) : (
+            <Route exact path="/" element={<Home />}></Route>
+          ) : (
             <Route
               exact
               path="/"
@@ -40,31 +41,61 @@ function App() {
           <Route
             exact
             path="/login"
-            element={<Login setLogin={setLogin} />}
+            element={
+              login.isLogin ? (
+                <Login setLogin={setLogin} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           ></Route>
           <Route
             exact
             path="/Menswear"
-            element={<Menswear cartData={cartData} setCartData={setCartData} />}
+            element={
+              login.isLogin ? (
+                <Menswear cartData={cartData} setCartData={setCartData} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           ></Route>
           <Route
             exact
             path="/Womenswear"
             element={
-              <Womenswear cartData={cartData} setCartData={setCartData} />
+              login.isLogin ? (
+                <Womenswear cartData={cartData} setCartData={setCartData} />
+              ) : (
+                <Navigate to="/" />
+              )
             }
+              
+            
           ></Route>
           <Route
             exact
             path="/Jewelery"
-            element={<Jewelery cartData={cartData} setCartData={setCartData} />}
+            element={
+            login.isLogin ? (
+                <Jewelery cartData={cartData} setCartData={setCartData} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           ></Route>
           <Route
             exact
             path="/Electronics"
             element={
-              <Electronics cartData={cartData} setCartData={setCartData} />
+              login.isLogin ? (
+                <Electronics cartData={cartData} setCartData={setCartData} />
+              ) : (
+                <Navigate to="/" />
+              )
             }
+              
+            
           ></Route>
         </Routes>
       </Router>
