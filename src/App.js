@@ -8,6 +8,7 @@ import Jewelery from "./components/category/Jewelery";
 import Electronics from "./components/category/Electronics";
 import { useState } from "react";
 import Navbar from "./components/UI/Navbar";
+import Footer from "./components/UI/Footer";
 
 function App() {
   //data of add cart store in cartData...
@@ -99,6 +100,7 @@ function App() {
           ></Route>
         </Routes>
       </Router>
+      {/* <Footer /> */}
     </>
   );
 }

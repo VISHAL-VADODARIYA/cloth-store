@@ -87,7 +87,7 @@ export default function Navbar({
         <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" class="flex items-center">
             <span class="text-white self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
-              Fake Store
+              Cloth Store
             </span>
           </a>
           <button

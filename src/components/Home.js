@@ -18,7 +18,7 @@ export default function Home({ login }) {
             data.map((i) => {
               return (
                 <>
-                  <div className="overflow-hidden border border-2 p-1 border-pink-700 rounded-xl">
+                  <div className="overflow-hidden border border-2 border-pink-700 rounded-xl hover:shadow-md hover:shadow-pink-700 hover:scale-105">
                     <img
                       src={i.image}
                       className="object-contain overflow-hidden border border-0 rounded-lg md:w-48 md:h-48 sm:w-60 sm:h-60 w-60 h-60 bg-white p-2"
@@ -27,14 +27,13 @@ export default function Home({ login }) {
                     />
                   </div>
                   <div className="overflow-hidden border border-0 rounded-md">
-                    <div 
+                    <div
                       className="object-contain overflow-hidden border border-0 md:w-48 md:h-48 w-0 h-0 bg-transperent"
                       width="300px"
                       height="30px"
                     />
                   </div>
                 </>
-
               );
             })}
         </div>
