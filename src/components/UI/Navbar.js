@@ -80,6 +80,12 @@ export default function Navbar({
   //         </div>
   //   </>
   // }
+  // function loginDisable(){
+
+  //   const loginDisable = document.getElementById('loginButton')
+
+  //   loginDisable.disabled = true;
+  // }
 
   return (
     <>
@@ -172,7 +178,7 @@ export default function Navbar({
 
           <div className="flex justify-between">
             <Link to="/login">
-              <button className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200">
+              <button id="loginButton" className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200">
                 {login?.username ? login.username : "Login"}
               </button>
             </Link>
