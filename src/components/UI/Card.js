@@ -77,13 +77,13 @@ export default function Card(props) {
         </p>
         <h5 class="mb-3 font-bold text-gray-700">Price : {props.price} ₹</h5>
       </div>
-      <div className="flex justify-around mt-full">
-        <Button
+      <div className="flex justify-center mt-full">
+        {/* <Button
           class="bg-green-700 text-white hover:bg-green-800"
           text="Buy"
           id={props.id}
           onClick={Buy}
-        />
+        /> */}
         <Button
           class="bg-blue-700 px-2 text-white hover:bg-blue-800"
           text="Add To Cart"
