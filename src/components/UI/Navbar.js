@@ -10,7 +10,7 @@ export default function Navbar({
   setCartData,
 }) {
   const [buy, setBuy] = useState(false);
-  const [miniToggleMenu, setMiniToggleMenu] = useState(false);
+  const [miniToggleMenu, setMiniToggleMenu] = useState(true);
 
   function MiniToggleMenu() {
     setMiniToggleMenu(!miniToggleMenu);
@@ -194,11 +194,11 @@ export default function Navbar({
                 </li>
               </ul>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-center">
               {login?.username && (
                 <button
                   id="loginButton"
-                  className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                  className="invisible md:visible px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
                 >
                   {login.username}
                 </button>
