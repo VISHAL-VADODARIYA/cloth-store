@@ -200,18 +200,25 @@ export default function Cart({
                   <div>Please Add item to Cart</div>
                 )}
               </div>
+
               {Object.keys(cartData).length > 0 && (
-                <div className="flex justify-around">
-                  <Button
-                    class="bg-pink-700 text-white"
-                    text="Cancel"
-                    onClick={() => {
-                      setCartData([]);
-                      setCartToggle(false);
-                    }}
-                  />
-                  <Button class="bg-pink-700 text-white px-9" text="Buy" />
-                </div>
+                <>
+                  <div className="text-center font-bold">
+                    Total Price:{" "}
+                    {(cartData.price * (countItem || 1)).toFixed(2)}
+                  </div>
+                  <div className="flex justify-around">
+                    <Button
+                      class="bg-pink-700 text-white"
+                      text="Cancel"
+                      onClick={() => {
+                        setCartData([]);
+                        setCartToggle(false);
+                      }}
+                    />
+                    <Button class="bg-pink-700 text-white px-9" text="Buy" onClick />
+                  </div>
+                </>
               )}
             </div>
           </div>
