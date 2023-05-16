@@ -189,8 +189,42 @@ export default function Navbar({
                 </Link>
               </li>
             </ul>
+            <div className="flex justify-center md:hidden ">
+              {login?.username && (
+                <button
+                  id="loginButton"
+                  className=" md:block hidden px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                >
+                  {login.username}
+                </button>
+              )}
+
+              <div className="m-2"> </div>
+
+              {login.isLogin && (
+                <button
+                  className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                  onClick={Buy}
+                >
+                  Cart{" "}
+                  {login.isLogin && (
+                    <span className="border px-1 rounded-full border-0 bg-pink-700 text-white">
+                      {Object.keys(cartData).length}
+                    </span>
+                  )}
+                </button>
+              )}
+              <div className="m-2"> </div>
+
+              {login.isLogin && (
+                <button
+                  className="px-3 py-1 bg-white rounded  text-pink-700 hover:bg-pink-200 fa fa-sign-out"
+                  onClick={logout}
+                ></button>
+              )}
+            </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex flex-row justify-center hidden md:inline-flex">
             {login?.username && (
               <button
                 id="loginButton"
