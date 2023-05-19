@@ -105,10 +105,10 @@ export default function Cart({
           >
             <div class="bg-white rounded-lg shadow p-5">
               <div className="flex justify-between mb-3">
-                <h2 className="text-4xl font-bold text-pink-700">Cart</h2>
+                <h2 className="text-4xl font-bold text-indigo-900">Cart</h2>
 
                 <button onClick={close} className="place-self-end">
-                  <span className="text-4xl font-bold text-pink-700">
+                  <span className="text-4xl font-bold text-indigo-900">
                     &times;
                   </span>
                 </button>
@@ -139,7 +139,7 @@ export default function Cart({
                               ).toFixed(2)}
                             </p>
                             <div className="flex justify-start">
-                              <div className="flex border border-1 rounded border-pink-700 w-min">
+                              <div className="flex border border-1 rounded border-indigo-900 w-min">
                                 <button
                                   className="px-2"
                                   text="-"
@@ -181,7 +181,7 @@ export default function Cart({
                               </div>
                               <Button
                                 id={i}
-                                class="flex text-white ml-3 bg-pink-700"
+                                class="flex text-white ml-3 bg-indigo-900"
                                 text="Remove"
                                 onClick={(i) => {
                                   setCartData((p) => {
@@ -208,15 +208,25 @@ export default function Cart({
                     {(cartData.price * (countItem || 1)).toFixed(2)}
                   </div>
                   <div className="flex justify-around">
+                    
                     <Button
-                      class="bg-pink-700 text-white"
+                      class="bg-indigo-900 text-white px-9"
                       text="Cancel"
+                      onClick={close}
+                    />
+                    <Button
+                      class="bg-indigo-900 text-white"
+                      text="Clear Cart"
                       onClick={() => {
                         setCartData([]);
                         setCartToggle(false);
                       }}
                     />
-                    <Button class="bg-pink-700 text-white px-9" text="Buy" onClick />
+                    <Button
+                      class="bg-indigo-900 text-white px-9"
+                      text="Buy"
+                      onClick
+                    />
                   </div>
                 </>
               )}

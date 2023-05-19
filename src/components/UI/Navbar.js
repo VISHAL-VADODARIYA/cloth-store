@@ -34,7 +34,7 @@ export default function Navbar({
   //               <Link to="/">
   //                 <a
   //                   href="#"
-  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
   //                   aria-current="page"
   //                 >
   //                   Home
@@ -45,7 +45,7 @@ export default function Navbar({
   //               <Link to="/Menswear">
   //                 <a
   //                   href="#"
-  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
   //                 >
   //                   Men's Wear
   //                 </a>
@@ -55,7 +55,7 @@ export default function Navbar({
   //               <Link to="/Womenswear">
   //                 <a
   //                   href="#"
-  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
   //                 >
   //                   Women's Wear
   //                 </a>
@@ -65,7 +65,7 @@ export default function Navbar({
   //               <Link to="/Jewelery">
   //                 <a
   //                   href="#"
-  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
   //                 >
   //                   Jewellery
   //                 </a>
@@ -75,7 +75,7 @@ export default function Navbar({
   //               <Link to="/Electronics">
   //                 <a
   //                   href="#"
-  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+  //                   class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
   //                 >
   //                   Electronics
   //                 </a>
@@ -94,7 +94,7 @@ export default function Navbar({
 
   return (
     <>
-      <nav class="bg-pink-700 shadow-xl border-gray-200">
+      <nav class="bg-indigo-900 shadow-xl border-gray-200">
         <div class="max-w-screen-2xl md:flex md:flex-wrap items-center justify-around mx-auto p-4">
           <div className="flex justify-between">
             <div>
@@ -108,7 +108,7 @@ export default function Navbar({
               <button
                 data-collapse-toggle="navbar-default"
                 type="button"
-                class="items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-white hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-white"
+                class="items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-white hover:text-indigo-900 focus:outline-none focus:ring-2 focus:ring-white"
                 aria-controls="navbar-default"
                 aria-expanded="false"
                 onClick={MiniToggleMenu}
@@ -141,7 +141,7 @@ export default function Navbar({
                 <Link to="/">
                   <a
                     href="#"
-                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                     aria-current="page"
                   >
                     Home
@@ -152,7 +152,7 @@ export default function Navbar({
                 <Link to="/Menswear">
                   <a
                     href="#"
-                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                   >
                     Men's Wear
                   </a>
@@ -162,7 +162,7 @@ export default function Navbar({
                 <Link to="/Womenswear">
                   <a
                     href="#"
-                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                   >
                     Women's Wear
                   </a>
@@ -172,7 +172,7 @@ export default function Navbar({
                 <Link to="/Jewelery">
                   <a
                     href="#"
-                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                   >
                     Jewellery
                   </a>
@@ -182,7 +182,7 @@ export default function Navbar({
                 <Link to="/Electronics">
                   <a
                     href="#"
-                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-pink-700"
+                    class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                   >
                     Electronics
                   </a>
@@ -193,7 +193,7 @@ export default function Navbar({
               {login?.username && (
                 <button
                   id="loginButton"
-                  className=" md:block hidden px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                  className=" md:block hidden px-8 py-1 bg-white rounded text-indigo-900 hover:bg-indigo-200"
                 >
                   {login.username}
                 </button>
@@ -203,12 +203,12 @@ export default function Navbar({
 
               {login.isLogin && (
                 <button
-                  className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                  className="px-8 py-1 bg-white rounded text-indigo-900 hover:bg-indigo-200"
                   onClick={Buy}
                 >
                   Cart{" "}
                   {login.isLogin && (
-                    <span className="border px-1 rounded-full border-0 bg-pink-700 text-white">
+                    <span className="border px-1 rounded-full border-0 bg-indigo-900 text-white">
                       {Object.keys(cartData).length}
                     </span>
                   )}
@@ -218,7 +218,7 @@ export default function Navbar({
 
               {login.isLogin && (
                 <button
-                  className="px-3 py-1 bg-white rounded  text-pink-700 hover:bg-pink-200 fa fa-sign-out"
+                  className="px-3 py-1 bg-white rounded  text-indigo-900 hover:bg-indigo-200 fa fa-sign-out"
                   onClick={logout}
                 ></button>
               )}
@@ -228,7 +228,7 @@ export default function Navbar({
             {login?.username && (
               <button
                 id="loginButton"
-                className=" md:block hidden px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                className=" md:block hidden px-8 py-1 bg-white rounded text-indigo-900 hover:bg-indigo-200"
               >
                 {login.username}
               </button>
@@ -238,12 +238,12 @@ export default function Navbar({
 
             {login.isLogin && (
               <button
-                className="px-8 py-1 bg-white rounded text-pink-700 hover:bg-pink-200"
+                className="px-8 py-1 bg-white rounded text-indigo-900 hover:bg-indigo-200"
                 onClick={Buy}
               >
                 Cart{" "}
                 {login.isLogin && (
-                  <span className="border px-1 rounded-full border-0 bg-pink-700 text-white">
+                  <span className="border px-1 rounded-full border-0 bg-indigo-900 text-white">
                     {Object.keys(cartData).length}
                   </span>
                 )}
@@ -253,7 +253,7 @@ export default function Navbar({
 
             {login.isLogin && (
               <button
-                className="px-3 py-1 bg-white rounded  text-pink-700 hover:bg-pink-200 fa fa-sign-out"
+                className="px-3 py-1 bg-white rounded  text-indigo-900 hover:bg-indigo-200 fa fa-sign-out"
                 onClick={logout}
               ></button>
             )}

@@ -42,7 +42,9 @@ export default function Login({ setLogin ,login }) {
         <div className="flex justify-center mt-20">
           <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-xl sm:p-6 md:p-8 ">
             <form class="space-y-6" action="#" onSubmit={verify}>
-              <h5 class="text-2xl font-bold text-pink-700">Log In</h5>
+              <h5 class="text-3xl text-center font-bold text-indigo-900">
+                Sign In
+              </h5>
               <div>
                 <label
                   for="email"
@@ -80,7 +82,7 @@ export default function Login({ setLogin ,login }) {
 
               <button
                 type="submit"
-                class="w-full text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                class="w-full text-white bg-indigo-900 hover:bg-indigo-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 onClick={checkpass}
               >
                 Login to your account

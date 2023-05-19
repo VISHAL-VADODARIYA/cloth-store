@@ -41,7 +41,7 @@ export default function Card(props) {
   //   });
   // }
   return (
-    <div class="max-w-sm bg-white rounded-lg shadow grid content-between p-5">
+    <div class="max-w-sm bg-white rounded-lg shadow grid content-between p-5 hover:shadow-xl border hover:border-indigo-900">
       <div>
         <div className="flex justify-center p-3">
           <a href="#">
@@ -85,7 +85,7 @@ export default function Card(props) {
           onClick={Buy}
         /> */}
         <Button
-          class="bg-blue-700 px-2 text-white hover:bg-blue-800"
+          class="bg-indigo-900 px-2 text-white hover:bg-white border hover:border-indigo-900 hover:text-indigo-900 hover:font-bold"
           text="Add To Cart"
           id={props.id}
           onClick={addCart}
