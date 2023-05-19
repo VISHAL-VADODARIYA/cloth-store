@@ -10,7 +10,7 @@ export default function Navbar({
   setCartData,
 }) {
   const [buy, setBuy] = useState(false);
-  const [miniToggleMenu, setMiniToggleMenu] = useState(true);
+  const [miniToggleMenu, setMiniToggleMenu] = useState(false);
 
   function MiniToggleMenu() {
     setMiniToggleMenu(!miniToggleMenu);
@@ -19,10 +19,12 @@ export default function Navbar({
   function Buy() {
     login.isLogin && setBuy(true);
     setCartToggle(true);
+    MiniToggleMenu()
   }
 
   function logout() {
     setLogin({ isLogin: false, username: "" });
+    MiniToggleMenu()
   }
   // const [toggleClose,setToggleClose] = useState(false)
   // function toggleclose(){
@@ -133,7 +135,7 @@ export default function Navbar({
           </div>
 
           <div
-            class={miniToggleMenu && " w-full md:block md:w-auto hidden"}
+            class={!miniToggleMenu && " w-full md:block md:w-auto hidden"}
             id="navbar-default"
           >
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-auto">
@@ -143,6 +145,7 @@ export default function Navbar({
                     href="#"
                     class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
                     aria-current="page"
+                    onClick={MiniToggleMenu}
                   >
                     Home
                   </a>
@@ -153,6 +156,7 @@ export default function Navbar({
                   <a
                     href="#"
                     class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
+                    onClick={MiniToggleMenu}
                   >
                     Men's Wear
                   </a>
@@ -163,6 +167,7 @@ export default function Navbar({
                   <a
                     href="#"
                     class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
+                    onClick={MiniToggleMenu}
                   >
                     Women's Wear
                   </a>
@@ -173,6 +178,7 @@ export default function Navbar({
                   <a
                     href="#"
                     class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
+                    onClick={MiniToggleMenu}
                   >
                     Jewellery
                   </a>
@@ -183,6 +189,7 @@ export default function Navbar({
                   <a
                     href="#"
                     class="block py-1 pl-3 pr-3 text-white rounded hover:bg-white hover:text-indigo-900"
+                    onClick={MiniToggleMenu}
                   >
                     Electronics
                   </a>
