@@ -5,11 +5,7 @@ export default function Login({ setLogin, login }) {
   var password;
   var passcode;
   const [PassCheck, setPassCheck] = useState("");
-  const [miniToggleMenu, setMiniToggleMenu] = useState(false);
-
-  function MiniToggleMenu() {
-    setMiniToggleMenu(!miniToggleMenu);
-  }
+  
 
   const [loginData, setLoginData] = useState({
     name: "",
@@ -36,7 +32,7 @@ export default function Login({ setLogin, login }) {
   };
   const checkpass = () => {
     setPassCheck("Plase enter correct password");
-    MiniToggleMenu();
+    
   };
 
   // const logout = () =>{setLogin({ isLogin: false, username: "login" });}
