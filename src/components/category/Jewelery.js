@@ -16,7 +16,7 @@ export default function Api({ cartData, setCartData }) {
   GetPostsData();
 
   return (
-    <div>
+    <div className="grid justify-items-center">
       {data ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:mx-36 mx-auto mt-10">
           {data.data.map((i) => {
