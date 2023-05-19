@@ -10,7 +10,7 @@ export default function Navbar({
   setCartData,
 }) {
   const [buy, setBuy] = useState(false);
-  const [miniToggleMenu, setMiniToggleMenu] = useState(false);
+  const [miniToggleMenu, setMiniToggleMenu] = useState(true);
 
   function MiniToggleMenu() {
     setMiniToggleMenu(!miniToggleMenu);
