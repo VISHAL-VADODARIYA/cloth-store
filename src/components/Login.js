@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Home from "./Home";
 
-export default function Login({ setLogin ,login }) {
+export default function Login({ setLogin, login }) {
   var password;
   var passcode;
-  const [PassCheck,setPassCheck] = useState('')
+  const [PassCheck, setPassCheck] = useState("");
+  const [miniToggleMenu, setMiniToggleMenu] = useState(false);
 
+  function MiniToggleMenu() {
+    setMiniToggleMenu(!miniToggleMenu);
+  }
 
   const [loginData, setLoginData] = useState({
     name: "",
     password: Math.floor(Math.random() * 9999 + 1),
   });
-  const [loginRedirect,setLoginRedirect] = useState(false);
+  const [loginRedirect, setLoginRedirect] = useState(false);
   useEffect(() => {
     console.log(loginData.password);
   }, []);
@@ -29,10 +33,12 @@ export default function Login({ setLogin ,login }) {
       e.target[1].value = "";
       setLoginRedirect(true);
     }
-    
   };
-  const checkpass =() => { setPassCheck('Plase enter correct password')}
-  
+  const checkpass = () => {
+    setPassCheck("Plase enter correct password");
+    MiniToggleMenu();
+  };
+
   // const logout = () =>{setLogin({ isLogin: false, username: "login" });}
   return (
     <>
