@@ -30,7 +30,7 @@ export default function Navbar({
 
   return (
     <>
-      <nav class="bg-indigo-900 shadow-xl border-gray-200">
+      <nav class="bg-indigo-900 shadow-xl border-gray-200 sticky top-0">
         <div class="max-w-screen-2xl md:flex md:flex-wrap items-center justify-around mx-auto p-4">
           <div className="flex justify-between">
             <div>
