@@ -18,7 +18,7 @@ export default function Home({ login }) {
             data.map((i) => {
               return (
                 <>
-                  <div className="overflow-hidden border border-2 border-indigo-900 rounded-xl hover:shadow-md hover:shadow-indigo-900 hover:scale-105">
+                  <div className="overflow-hidden border border-2 border-indigo-900 rounded-xl transition duration-200 ease-in-out delay-50 hover:shadow-md hover:shadow-indigo-900 hover:scale-105">
                     <img
                       src={i.image}
                       className="object-contain overflow-hidden border border-0 rounded-lg md:w-48 md:h-48 sm:w-60 sm:h-60 w-60 h-60 bg-white p-2"

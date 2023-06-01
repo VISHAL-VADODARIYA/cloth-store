@@ -19,14 +19,13 @@ export default function Navbar({
   function Buy() {
     login.isLogin && setBuy(true);
     setCartToggle(true);
-    MiniToggleMenu()
+    MiniToggleMenu();
   }
 
   function logout() {
     setLogin({ isLogin: false, username: "" });
-    MiniToggleMenu()
+    MiniToggleMenu();
   }
-  
 
   return (
     <>
@@ -46,7 +45,7 @@ export default function Navbar({
                   data-collapse-toggle="navbar-default"
                   type="button"
                   class="items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-white hover:text-indigo-900 focus:outline-none focus:ring-2 focus:ring-white"
-                  aria-controls="navbar-default"
+                  aria-cntrols="navbar-default"
                   aria-expanded="false"
                   onClick={MiniToggleMenu}
                   // onChange={toggleclose}
